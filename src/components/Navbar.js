@@ -6,7 +6,7 @@ export class Navbar extends Component {
         return (
             <nav className="navbar navbar-dark bg-primary p-3" >
                 <a href="/#" className="navbar-brand" >
-                    <FontAwesomeIcon icon={this.props.icon}/>{this.props.title}
+                    <FontAwesomeIcon icon= "fa-brands fa-github"/>{this.props.title}
                 </a>
             </nav>
         )
