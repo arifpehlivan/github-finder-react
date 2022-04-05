@@ -4,7 +4,7 @@ import Navbar from './Navbar'
 export class App extends Component {
   render() {
     return (
-      <Navbar/>
+      <Navbar title="Github Finder" icon="fa-brands fa-github"/>
     )
   }
 }
