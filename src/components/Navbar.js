@@ -5,9 +5,11 @@ export class Navbar extends Component {
     render() {
         return (
             <nav className="navbar navbar-dark bg-primary p-3" >
-                <a href="/#" className="navbar-brand" >
-                    <FontAwesomeIcon icon= "fa-brands fa-github"/>{this.props.title}
-                </a>
+                <div className="container">
+                    <a href="/#" className="navbar-brand">
+                        <FontAwesomeIcon icon= "fa-brands fa-github"/>{this.props.title}
+                    </a>
+                </div>
             </nav>
         )
     }

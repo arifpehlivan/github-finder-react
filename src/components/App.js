@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Navbar from './Navbar'
 import Users from './Users'
+import Search from './Search'
 import axios from "axios"
 
 export class App extends Component {
@@ -17,13 +18,14 @@ export class App extends Component {
       axios
         .get("https://api.github.com/users")
         .then(res=>this.setState({users:res.data, loading:false}));
-    },3000)
+    },1000)
     
   }
   render() {
     return (
       <>
         <Navbar title="Github Finder" icon="fa-brands fa-github"/>
+        <Search/>
         <Users users={this.state.users} loading={this.state.loading}/>
       </>
       
