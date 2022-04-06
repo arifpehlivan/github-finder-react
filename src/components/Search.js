@@ -21,16 +21,19 @@ export class Search extends Component {
     }
   render() {
     return (
+    <div className="container my-3">
       <form onSubmit={this.onSubmit}>
-          <div className="container my-3">
             <div className="input-group">
                 <input type="text" value={this.state.keyword} onChange={this.onChange} className='form-control'/>
                 <div className="input-group-append">
                     <button type="submit" className="btn btn-primary">Search</button>
                 </div>
             </div>
-          </div>
       </form>
+      {
+          this.props.showClearButton && <button onClick={this.props.clearUsers} className="btn btn-secondary btn-sm w-100 mt-2">Clear Results</button>
+      }
+    </div>
     )
   }
 }
