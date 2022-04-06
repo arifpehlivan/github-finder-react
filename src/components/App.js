@@ -7,19 +7,24 @@ export class App extends Component {
   constructor(props){
     super(props);
     this.state={
+      loading: false,
       users:[]
     }
   }
   componentDidMount(){
-    axios
-    .get("https://api.github.com/users")
-    .then(res=>this.setState({users:res.data}));
+    this.setState({loading:true});
+    setTimeout(()=>{
+      axios
+        .get("https://api.github.com/users")
+        .then(res=>this.setState({users:res.data, loading:false}));
+    },3000)
+    
   }
   render() {
     return (
       <>
         <Navbar title="Github Finder" icon="fa-brands fa-github"/>
-        <Users users={this.state.users}/>
+        <Users users={this.state.users} loading={this.state.loading}/>
       </>
       
     )
